@@ -1,5 +1,4 @@
-	   
-    <section class="contact" id="contact">
+<section class="contact" id="contact">
         <div class="container">
             <h2 class="txt-center"><?php echo cs_get_option('contactform7_title');?></h2>
             <p><?php echo cs_get_option('contactform7_sub_title');?></p>
@@ -15,7 +14,34 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-4">
-                <a href="index.html"><img src="<?php if(cs_get_option('log_c')){ echo cs_get_option('log_c'); }else{ echo esc_url( get_template_directory_uri() ).'/images/logo.png'; }?>" alt="footer logo"></a>                   
+                         <a class="navbar-brand" href="<?php echo site_url(); ?>">
+                            <?php if(cs_get_option('log_c')){?>
+                        <img src="<?php echo cs_get_option('log_c');?>" alt="logo"> 
+                        <?php }else{ echo cs_get_option('logo_text_c'); }?>
+                        </a>  
+                
+                         <ul class="stayInTouch text-left">
+                          <?php if( ! empty( cs_get_option('facebook_link'))){?>
+                        <li>
+                           <a href="<?php echo cs_get_option('facebook_link');?>"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/facebook.png" alt=""></a>
+                        </li>
+                        <?php }?>
+                        <?php if( ! empty( cs_get_option('twitter_link'))){?>
+                        <li>
+                            <a href="<?php echo cs_get_option('twitter_link');?>"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/twitter.png" alt=""></a>
+                        </li>
+                        <?php }?>
+                        <?php if( ! empty( cs_get_option('linkedin_link'))){?>
+                         <li>
+                            <a href="<?php echo cs_get_option('linkedin_link');?>"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/linkedin.png" alt=""></a>
+                        </li>
+                        <?php }?>
+                        <?php if( ! empty( cs_get_option('pinterest_link'))){?>
+                         <li>
+                            <a href="<?php echo cs_get_option('pinterest_link');?>"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/pinterest.png" alt=""></a>
+                        </li>
+                        <?php }?>
+                    </ul>
                 </div>
                 <div class="col-sm-4">
                 <?php echo cs_get_option('footer_contactinfo');?>                    
@@ -76,7 +102,7 @@
 		.on('closed.simplelightbox', function(){
 			console.log('Closed');
 		})
-		.on('change.simplelightbox', function(){
+		/*.on('change.simplelightbox', function(){
 			console.log('Requested for change');
 		})
 		.on('next.simplelightbox', function(){
@@ -103,8 +129,35 @@
 		.on('error.simplelightbox', function(e){
 			console.log('No image found, go to the next/prev');
 			console.log(e);
-		});
+		});*/
 	});
+	
+	
+	
+	function initMap() {
+    var mapDiv = document.getElementById('map');
+    var map = new google.maps.Map(mapDiv, {
+        center: {
+            lat: 44.540,
+            lng: -78.546
+        },
+        zoom: 8
+    });
+}
+
+$(document).ready(function() {
+    initMap();
+})
+
 </script>
+<?php echo '<style>.affix,.btn-default,input[type="submit"]{background:'.cs_get_option('main_picker');?>
+<?php echo '}body{color:'.cs_get_option('title_color_picker');?>
+<?php echo '}.grey_section{background:'.cs_get_option('text_color_picker');?>
+<?php echo '}.footer1{background-color:'.cs_get_option('baground_color_sectopm');?>
+<?php echo '}h2, h1 a,h1,.color_b{color:'.cs_get_option('text_head');?>
+<?php echo '}.site-info,.navbar-nav > li > a,.navbar-brand,.btn-default,input[type="submit"]{color:'.cs_get_option('brand_text_color');?>
+<?php echo '}section.toranto{background-color:'.cs_get_option('table_section');?>
+<?php echo '}section.toranto .txt-center, section.toranto .table{color:'.cs_get_option('table_section_text');?>
+<?php echo '}footer{background-color:'.cs_get_option('Other_color_picker').'}</style>';?>
 </body>
 </html>

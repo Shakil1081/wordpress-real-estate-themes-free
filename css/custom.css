@@ -1,13 +1,4 @@
 html{overflow-x:hidden;}
-
-body{
-
-
-    font-family: 'Yantramanav', sans-serif !important;
-
-}
-
-p{font-family: 'Yantramanav', sans-serif !important;}
 h1, h2, h3, h4, h5, h6 {
     position: relative;
     font-weight: normal;
@@ -54,6 +45,7 @@ h1, h2, h3, h4, h5, h6 {
     border: 0;
     position: relative;
     z-index: 999999;
+    background-color: #2521224f;
 }
 
 .navbar {
@@ -78,7 +70,6 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     right: 0;
     z-index: 999999999;
-    background: #ff2d44 !important;
     transition: all 500ms ease;
     -moz-transition: all 500ms ease;
     -webkit-transition: all 500ms ease;
@@ -123,7 +114,6 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     display: block;
     padding: 12px 13px 12px;
-    color: #ffffff;
     text-align: center;
     line-height: 30px;
     letter-spacing: 0px;
@@ -168,23 +158,31 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 4px !important;
 }
 
-/*=============================================================================================*/
+/*============*/
 
 /*Banner*/
 
 .banner .bannerContent {
     position: absolute;
-    top: 30%;
+    top: 38%;
     left: 0;
     right: 0;
     text-align: center;
     z-index: 9999;
 }
+.btn-group.mr-2 {
+    margin-right: 2%;
+}
 .banner .bannerContent p {
     font-size: 26px !important;
-    font-weight: 400;
-    padding: 0 0 30px;
+    font-weight: bold;
+    padding: 8px 8px 12px;
     font-family: 'Yantramanav', sans-serif !important;
+    background-color: #2521227d;
+    width: 34%;
+    margin: auto;
+    margin-bottom: 11px;
+	line-height:175%; 
 }
 
 .home.page-template .banner .bannerContent h1 {
@@ -223,48 +221,25 @@ section.rating li span {
     padding: 10px;
     margin-right: 5px;
 }
-
-
-/*=============================================================================================*/
-
 /*Section 1 (Real Estate & Purchase services)*/
-
 .build_info1 p,
 .build_info p,
 .purchase_service p {
 position: relative;
-    color: #666666;
     font-size: 16px;
     line-height: 1.8em;
     margin-bottom: 22px;
 }
-
-
 /*Section 2 (Toranto and area)*/
-
 section.toranto {
-    background: #ff2d44;
- /*   background-image: url(../images/table.jpg);*/
     height: 100%;
     position: relative;
     color: #373737;
-
-    /*background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;*/
 }
 section.toranto:after {
     content: '';
     width: 100%;
     display: table;
-    /*height: 100%;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(26,29,31,0.80);*/
 }
 section.toranto .txt-center, section.toranto .table {
     text-align: center !important;
@@ -273,9 +248,6 @@ section.toranto .txt-center, section.toranto .table {
     color: #fff;
     display: block;
 }
-
-
-
 section.toranto th {
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
@@ -284,15 +256,7 @@ section.toranto th {
 section.toranto .borderright, section.toranto .borderBottom, section.toranto table {
     border-color: #e2e2e278 !important;
 }
-
 section.toranto td {
-    font-family: 'Raleway', sans-serif;
-    font-size: 14px !important;
-}
-section.toranto td {
-    font-family: 'Raleway', sans-serif;
-    font-size: 16px;
-    font-weight: 500;
     padding: 5px;
     vertical-align: middle !important;
 }
@@ -303,21 +267,19 @@ section.toranto th, section.toranto td {
 section h3 {
     margin-bottom: 50px;
 }
-
 section.toranto table {
     border: 1px solid #000;
     margin: 0 auto;
 }
-
-
 section.toranto td,
 section.toranto th {
-    font-size: 24px;
     text-align: center;
     padding: 40px 0;
     width: 450px;
 }
-
+section.toranto th{
+	font-weight:bolder;
+}
 
 /*=============================================================================================*/
 
@@ -375,7 +337,8 @@ section.toranto th {
 /*map-section*/
 
 section.map {
-    padding: 0!important;
+    padding: 0px !important;
+    margin-bottom: -9px;
 }
 
 section.map img {
@@ -388,11 +351,9 @@ section.map img {
 /*Section 6 (Contact)*/
 
 .contact {
-    background-color: #f3f3f3;
     position: relative;
     z-index: 999;
 }
-
 .contact form {
     width: 55%;
     margin: 0 auto;
@@ -474,7 +435,7 @@ span.wpcf7-not-valid-tip {
 
 
 
-/*========================================================REGISTER PAGE==============================================================*/
+/*==================REGISTER PAGE============*/
 
 /*register-banner*/
 
@@ -483,7 +444,6 @@ span.wpcf7-not-valid-tip {
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
-    height: 530px!important;
 }
 
 .register_page .banner .bannerContent {
@@ -556,7 +516,7 @@ textarea:focus {
 
 
 
-/*=================================================GALLERY PAGE============================================*/
+/*===============GALLERY PAGE============*/
 
 .photo-gallery {
     display: table;
@@ -604,7 +564,6 @@ textarea:focus {
 .right .col-sm-12 {
     padding: 0
 }
-
 .lowerRight {
     margin-right: 0
 }
@@ -615,7 +574,8 @@ textarea:focus {
 
 .sl-wrapper .sl-close,
 .sl-wrapper .sl-counter {
-    color: #fff!important
+    color: #fff!important;
+    background-color:red;
 }
 
 .sl-wrapper .sl-navigation button.sl-next,
@@ -624,7 +584,7 @@ textarea:focus {
 }
 .right_row23{margin-right:0px;margin-left:0px;}
 
-/*=================================BUILDER PAGE==================================*/
+/*============BUILDER PAGE================*/
 
 .about_build {
     display: table;
@@ -665,7 +625,7 @@ textarea:focus {
 
 
 
-/*=================================BUILDER=================================*/
+/*============BUILDER=============*/
 
 .floorSlider {
     position: relative
@@ -729,11 +689,6 @@ textarea:focus {
 /*new css*/
 
 .page-id-243 .wrapper.baner-image.register_page:After,.wrapper.baner-image.register_page:After {content: "";position: absolute;left: 0;right: 0;bottom: 0;background: #000000a3;width: 100%;height: 100%;}
-.footer1 .stayInTouch {
-    width: 76%;
-    text-align: center;
-    margin: 0 auto;
-}
 
 .builderPage img {
     width: 100%;
@@ -828,8 +783,7 @@ section#contact p.txt-center {
 /*Section 7 (Footer 1)*/
 
 .footer1 {
-    background: #ff2d44;
-    padding: 55px 0;
+   padding: 55px 0;
 }
 
 .footer1 ul {
@@ -870,6 +824,7 @@ section#contact p.txt-center {
 .footer1 .stayInTouch {
     width: 76%;
     text-align: center;
+    padding-top: 60px;
 }
 
 .footer1 .stayInTouch li {
@@ -885,12 +840,11 @@ section#contact p.txt-center {
 .footer1 h4 {
     text-align: center;
 }
-/*=============================================================================================*/
+/*=======================*/
 
 /*footer*/
 
 footer {
-    background: #f61c34;
     padding: 20px 0;
     text-align: center;
 }
@@ -924,7 +878,10 @@ p.site-info.custom_call {
 .col-sm-3.mrb30 {
     margin-bottom: 30px;
 }
-/*=============================================================================================*/
+h1.white {
+    color: #fff;
+}
+/*====================*/
 
 /*Media Queries*/
 
@@ -950,7 +907,6 @@ p.site-info.custom_call {
         height: 700px;
     }
     .footer1 {
-        background: #ff2d44;
         padding: 40px 0;
     }
     footer {
@@ -958,6 +914,12 @@ p.site-info.custom_call {
         padding: 15px 0;
 
     }
+	
+	.card-desc h3 {
+    margin-bottom: 0px;
+    text-align: center;
+    display: inline-block;
+}
 /*    section.toranto {
         height: 750px;
     }*/
@@ -1111,6 +1073,12 @@ p.site-info.custom_call {
 
 
 @media(max-width:768px) {
+    .navbar-brand {
+    font-size: 173% !important;
+    line-height: 17px!important;
+        
+    }
+    
     .navbar-brand > img {
         width: 150px;
     }
@@ -1295,7 +1263,16 @@ p.site-info.custom_call {
     .home.page-template .banner .bannerContent h1{    font-size: 42px !important;}
 }
 
+#map {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: 400px;
+}
 @media(max-width:525px) {
+    .btn-group.mr-2 {
+    margin-bottom: 4%; 
+}
     .wrapper {
         height: 390px;
         background-size: cover;
@@ -1378,6 +1355,20 @@ p.site-info.custom_call {
     
     input[type=radio]{padding: 10px!important}
     .home.page-template .banner .bannerContent h1{    font-size: 30px !important;}
+        .banner .bannerContent p {
+        width: 100%;
+        font-size: 15px !important;
+        }
+.banner .bannerContent {
+    top: 200px !important;
+}
+        section.homesection {
+        margin-top: 66px;
+        }
+.top-pdng {
+    margin-top: 150px !important;
+}
+
     }
 
     @media(max-width:375px) {

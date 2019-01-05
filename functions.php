@@ -32,11 +32,87 @@ function extra_cs_framework_options( $options ) {
 			'id'    => 'phone_number',
 			'type'  => 'text',
 			'title' => 'Phone Number',
-			'default' => 'Call: xxx-xxx-xxxx',
+			'default' => '00-000-0000',
 		  ),
 		  
 		)
-	  );
+		);
+
+	/*--=========================================--*/	  
+// Color section 
+/*--=========================================--*/
+$options[]    = array(
+	'name'      => 'section_color_section',
+	'title'     => 'Color Section',
+	'icon'      => 'fa fa-caret-right',
+	'fields'    => array(
+		array(
+			'id'      => 'main_picker', 
+			'type'    => 'color_picker',
+			'title'   => 'Main color',
+			'desc'    => 'The main color will use as a background for main menu background, Button background color default color #ff2d43',
+			'default' => '#ff2d43',
+			),
+			array(
+				'id'      => 'brand_text_color', 
+				'type'    => 'color_picker',
+				'title'   => 'Brand Text color',
+				'desc'    => 'Logo text color, mani menu text color, phone number  text color, phone number title color, footer copyright color, Button Text color default color #FFF',
+				'default' => '#FFF',
+				),
+			array(
+				'id'      => 'text_head', 
+				'type'    => 'color_picker',
+				'title'   => 'H1,H2 color',
+				'desc'    => 'H1, H1 a, color_b , H2 title color default color #464646',
+				'default' => '#464646',
+				),
+
+				array(
+					'id'      => 'table_section', 
+					'type'    => 'color_picker',
+					'title'   => 'Table section',
+					'desc'    => 'Table section background color default color #ff2d43',
+					'default' => '#ff2d43',
+					),
+					array(
+						'id'      => 'table_section_text', 
+						'type'    => 'color_picker',
+						'title'   => 'Table section Text',
+						'desc'    => 'Table section Text color default color #fff',
+						'default' => '#fff',
+						),						
+			array(
+				'id'      => 'title_color_picker', 
+				'type'    => 'color_picker',
+				'title'   => 'Body Color',
+				'desc'    => 'Main body color section text color default color #666',
+				'default' => '#666',
+				),
+			array(
+				'id'      => 'text_color_picker', 
+				'type'    => 'color_picker',
+				'title'   => 'Section baground Color',
+				'desc'    => 'Section baground Color for all other section default color #f1f1f1',
+				'default' => '#f1f1f1',
+				),
+
+				array(
+					'id'      => 'baground_color_sectopm', 
+					'type'    => 'color_picker',
+					'title'   => 'Section Background Color',
+					'desc'    => 'Footer sub section Background color default color #ff2d44',
+					'default' => '#ff2d44',
+					),
+			array(
+					'id'      => 'Other_color_picker', 
+					'type'    => 'color_picker',
+					'title'   => 'footer Color',
+					'desc'    => 'footer Background Color default color #ff2d43',
+					'default' => '#ff2d43',
+					),
+	)
+	);
 /*--=========================================--*/	  
 // Hero section 
 /*--=========================================--*/
@@ -48,26 +124,26 @@ $options[]    = array(
 		array(
 			'id'      => 'facebook_link',
 			'type'    => 'text',
-			'title'   => 'Facebook link',
-			'default' => '',
+			'title'   => 'http://facebook.com',
+			'default' => 'http://facebook.com/',
 		  ),
 		  array(
 			'id'      => 'twitter_link',
 			'type'    => 'text',
-			'title'   => 'twitter link',
-			'default' => '',
+			'title'   => 'http://twitter.com',
+			'default' => 'http://twitter.com/',
 		  ),
 		 array(
 			'id'      => 'linkedin_link',
 			'type'    => 'text',
-			'title'   => 'Google Plus',
-			'default' => '',
+			'title'   => 'http://linkedin.com',
+			'default' => 'http://linkedin.com/',
 		  ),
 		  array(
 			'id'      => 'pinterest_link',
 			'type'    => 'text',
-			'title'   => 'instagram link',
-			'default' => '',
+			'title'   => 'http://instagram.com',
+			'default' => 'http://instagram.com/',
 		  ),
 	)
   );
@@ -76,7 +152,7 @@ $options[]    = array(
 /*--=========================================--*/
 	  $options[]    = array(
 		'name'      => 'section_header_c',
-		'title'     => 'Header logo/',
+		'title'     => 'Header logo/favicon',
 		'icon'      => 'fa fa-caret-right',
 		'fields'    => array(
 			array(
@@ -90,14 +166,26 @@ $options[]    = array(
 				 'insert_title' => 'Use this image',
 				),
 				),
-			  /*array(
+					array(
+				'id'            => 'favicon',
+				'type'          => 'upload',
+				'title'         => 'favicon',
+				'settings'      => array(
+				 'upload_type'  => 'image',
+				 'button_title' => 'Select Logo',
+				 'frame_title'  => 'Select an image',
+				 'insert_title' => 'Use this image',
+				),
+				),
+				
+			  array(
 				'id'      => 'logo_text_c',
 				'type'    => 'text',
 				'title'   => 'Text Logo',
 				'desc'    => 'This is text logo when image loog is not available',
 				'help'    => 'Write something',
 				'default' => 'Lorem Ipsum',
-			  ),*/
+			  ),
 		  
 		)
 	  );
@@ -105,38 +193,39 @@ $options[]    = array(
 /*--=========================================--*/	  
 // Hero section 
 /*--=========================================--*/
-	  $options[]    = array(
-		'name'      => 'section_hero_c',
-		'title'     => 'Hero',
-		'icon'      => 'fa fa-caret-right',
-		'fields'    => array(
+$options[]    = array(
+	'name'      => 'section_hero_c',
+	'title'     => 'Hero',
+	'icon'      => 'fa fa-caret-right',
+	'fields'    => array(
+		array(
+			'id'      => 'heto_title', 
+			'type'    => 'text',
+			'title'   => 'Title',
+			'default' => 'NOTTING HILL CONDOS',
+			),
 			array(
-				'id'      => 'heto_title', 
-				'type'    => 'text',
-				'title'   => 'Title',
-				'default' => 'NOTTING HILL CONDOS',
-			  ),
-			  array(
-				'id'      => 'heto_sub_title', 
-				'type'    => 'text',
-				'title'   => 'Sub Title',
-				'default' => 'Where does it come from?',
-			  ),
-			  array(
-				'id'      => 'heto_button_text', 
-				'type'    => 'text',
-				'title'   => 'Button text',
-				'default' => 'Register Here',
-			  ),
-			  array(
-				'id'      => 'heto_button_link',
-				'type'    => 'text',
-				'title'   => 'Button link',
-				'default' => 'http://nottinghillcondovip.ca/#contact',
-			  ),
-		  
-		)
-	  );
+			'id'      => 'heto_sub_title', 
+			'type'    => 'text',
+			'title'   => 'Sub Title',
+			'default' => 'Where does it come from?',
+			),
+			array(
+			'id'      => 'heto_button_text', 
+			'type'    => 'text',
+			'title'   => 'Button text',
+			'default' => 'Register Here',
+			),
+			array(
+			'id'      => 'heto_button_link',
+			'type'    => 'text',
+			'title'   => 'Button link',
+			'default' => 'http://nottinghillcondovip.ca/#contact',
+			),
+		
+	)
+	);
+
 /*--=========================================--*/	  
 // Hero section 
 /*--=========================================--*/
@@ -468,36 +557,7 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
-
-/*--====================================--*/
-// theme requirment AFC 
-/*--====================================--*/
-
-/*
-add_filter('acf/settings/path', 'my_acf_settings_path');
- 
-function my_acf_settings_path( $path ) {
-    $path = get_stylesheet_directory() . '/inc/advanced-custom-fields/';
-    return $path;
-    
+function new_excerpt_more( $more ) {
+    return '';
 }
- 
-
-add_filter('acf/settings/dir', 'my_acf_settings_dir');
- 
-function my_acf_settings_dir( $dir ) {
- 
-    $dir = get_stylesheet_directory_uri() . '/inc/advanced-custom-fields/';
-    
-    return $dir;
-    
-}
-
-require_once dirname( __FILE__ ) . '/inc/advanced-custom-fields/acf.php';
-Include include_once( get_stylesheet_directory() . '/inc/advanced-custom-fields/acf.php' );
-*/
-
-/*--==============================================--*/
-/* this is contacr form  */
-/*--==============================================--*/
+add_filter('excerpt_more', 'new_excerpt_more');

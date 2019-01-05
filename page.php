@@ -12,13 +12,7 @@
  * @package Reat_Estate_Theme
  */
 get_header(); ?>
-<?php global $wd_wt; 
- $meta_data = get_post_meta( get_the_ID(), '_custom_page_options', true );
-    /*var_dump( $meta_data );
-    echo $meta_data['section_b_text'];
-    echo $meta_data['section_b_textarea'];
-    echo $meta_data['section_b_upload'];*/
-     ?>
+<?php global $wd_wt; $meta_data = get_post_meta( get_the_ID(), '_custom_page_options', true );?>
 <body <?php body_class(); ?>>
     <div class="wrapper baner-image register_page" style="background-image: url(<?php echo $meta_data['section_top_bg']; ?>);">
         <!-- header -->
@@ -37,7 +31,11 @@ get_header(); ?>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="<?php echo site_url(); ?>"><img src="<?php if(cs_get_option('log_c')){ echo cs_get_option('log_c'); }else{ echo esc_url( get_template_directory_uri() ).'/images/logo.png'; }?>" alt="logo"></a>
+                         <a class="navbar-brand" href="<?php echo site_url(); ?>">
+                            <?php if(cs_get_option('log_c')){?>
+                        <img src="<?php echo cs_get_option('log_c');?>" alt="logo"> 
+                        <?php }else{ echo cs_get_option('logo_text_c'); }?>
+                        </a>
                     </div>
                     <div id="navbar2" class="navbar-collapse collapse">
                         <?php 
@@ -57,7 +55,7 @@ get_header(); ?>
             <div class="bannerOuter">
                 <div class="banner">
                     <div class="bannerContent">
-						<h1><?php if(isset($meta_data['section_a_text'])){?>
+						<h1 class="white"><?php if(isset($meta_data['section_a_text'])){?>
 						<?php echo $meta_data['section_tp_title']; ?>
 						<?php } else{the_title();} ?></h1>
 					   </div>

@@ -10,7 +10,7 @@ $settings           = array(
   'menu_slug'       => 'cs-framework',
   'ajax_save'       => false,
   'show_reset_all'  => false,
-  'framework_title' => 'Reat Estate Theme <small>http://webspreed.com</small>',
+  'framework_title' => 'Reat Estate Theme',
 );
 
 // ===============================================================================================

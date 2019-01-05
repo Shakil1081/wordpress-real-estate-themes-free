@@ -1,10 +1,4 @@
-<?php
-/*
-* Template Name: Home page
-*
-*/
 
-?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -22,6 +16,7 @@
 }
 
 ?>
+
     <!-- css -->
     <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/font-awesome.css">
@@ -35,6 +30,7 @@
     <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/demo1.css">   
     <link href='<?php echo esc_url( get_template_directory_uri() ); ?>/dist/simplelightbox.css' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <?php wp_head(); ?>
+  	<link rel="icon" href="<?php echo cs_get_option('favicon');?>" sizes="16x16" type="image/png"> 
 </head>

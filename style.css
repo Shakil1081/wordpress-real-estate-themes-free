@@ -64,9 +64,9 @@ html {
 
 /**
  * Remove the margin in all browsers.
- */body {
+ */
+ body {
     font-family: 'Roboto', sans-serif!important;
-    color: #000;
 }
 
 h1,
@@ -84,15 +84,16 @@ h1 {
     font-size: 40px;
     font-weight: 700;
     text-transform: uppercase;
-    color: #fff;
+}
+.colo_000{
+	color:#000;
 }
 
-h2 {
+h2,h1 a{
     font-size: 40px;
     font-weight: 400;
-    
+    text-transform: capitalize;
     color: #464646;
-    padding-bottom: 20px;
 }
 
 h3 {
@@ -105,17 +106,6 @@ h4 {
     font-size: 26px;
     font-weight: 400;
     color: #ffffff
-}
-
-
-section {
-    padding: 70px 0;
-}
-
-p {
-    font-size: 16px;
-    margin: 0;
-    font-family: 'Roboto', sans-serif
 }
 
 body a {
@@ -135,8 +125,8 @@ body a:hover {
     background-color: #ff2d43;
     border-color: #fff!important;
     transition: 0.6s ease all;
+      font-weight: bolder !important;
 }
-
 .btn-default:hover {
     color: #fff;
     background-color: #f61d34;
@@ -206,8 +196,42 @@ ul.front-listing li a {color: #666666;}
 }
 
 input[type="submit"] {
-    background-color: #ff2d43;}
+    background-color: #ff2d43;
+        color: #fff;
+}
+
     ul.stayInTouch li {
         display: inline;
         line-height: 46px;
     }
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+       font-size: 175%;
+    line-height: 50px;
+}
+a.navbar-brand:hover {
+    color: #fff;
+}
+.sl-wrapper .sl-counter,.sl-wrapper .sl-navigation {
+    width: 100%;
+    display: none !important;
+}
+/* card details start  */
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto+Condensed:400,400i,700,700i');
+section{
+    padding: 100px 0;
+}
+
+span.screen-reader-text{display:none;}
+input[type=search] {
+    -webkit-appearance: none;
+    border: 0px;
+    padding: 2px;
+    background-color: #bbbabb;
+}
+input[type="submit"] {
+    border: 0;
+    padding: 2px 16px;
+}

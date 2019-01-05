@@ -771,7 +771,6 @@ class acf_admin_field_groups {
 	?>
 	<tr <?php if($i%2 == 0): ?>class="alternate"<?php endif; ?>>
 		<th class="check-column" scope="row">
-			<label for="cb-select-<?php echo esc_attr($key); ?>" class="screen-reader-text"><?php echo esc_html(sprintf(__('Select %s', 'acf'), $title)); ?></label>
 			<input type="checkbox" value="<?php echo esc_attr($key); ?>" name="post[]" id="cb-select-<?php echo esc_attr($key); ?>">
 		</th>
 		<td class="post-title page-title column-title">

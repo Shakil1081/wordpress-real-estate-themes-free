@@ -1,6 +1,7 @@
 body {
     font-family: 'Roboto', sans-serif!important;
-    color: #000;
+	font-size:18px;
+	line-height: 30px;
 }
 
 h1,
@@ -17,15 +18,12 @@ h6 {
 h1 {
     font-size: 40px;
     font-weight: 700;
-    text-transform: uppercase;
-    color: #fff;
+    text-transform: capitalize;
 }
 
 h2 {
     font-size: 40px;
-    font-weight: 400;
-    
-    color: #464646;
+    font-weight: 400;    
     padding-bottom: 40px;
 }
 
@@ -56,12 +54,6 @@ section {
     padding: 70px 0;
 }
 
-p {
-    font-size: 20px;
-    margin: 0;
-    font-family: 'Roboto', sans-serif
-}
-
 body a {
     text-decoration: none;
 }
@@ -75,7 +67,6 @@ body a:hover {
 }
 
 .btn-default {
-    color: #fff;
     background-color: #ff2d43;
     border-color: #fff!important;
     transition: 0.6s ease all;
@@ -147,8 +138,210 @@ ul.front-listing {color: #666666;margin-left: 3%;font-size: 14px;text-align:left
 ul.front-listing li a {color: #666666;}
 .build_info1 p, .build_info p, .purchase_service p {
     position: relative;
-    color: #666666;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.8em;
     margin-bottom: 22px;
+}
+
+.card {
+    min-height:400px;
+    background:#fff;
+    box-shadow:0 20px 50px rgba(0,0,0,.1);
+    border-radius:10px;
+    transition:0.5s;
+}
+.card:hover {
+    box-shadow:0 30px 70px rgba(0,0,0,.2);
+}
+.card .box {
+
+    text-align:center;
+    padding:20px;
+    box-sizing:border-box;
+    width:100%;
+}
+.card .box .img {
+    width:120px;
+    height:120px;
+    margin:0 auto;
+    border-radius:50%;
+    overflow:hidden;
+}
+.card .box .img img {
+    width:100%;
+    height:100%;
+}
+.card .box h2 {
+    font-size:20px;
+    color:#262626;
+    margin:20px auto;
+}
+.card .box h2 span {
+    font-size:14px;
+    background:#e91e63;
+    color:#fff;
+    display:inline-block;
+    padding:4px 10px;
+    border-radius:15px;
+}
+.card .box p {
+    color:#262626;
+}
+.card .box span {
+    display:inline-flex;
+}
+.card .box ul {
+    margin:0;
+    padding:0;
+}
+.card .box ul li {
+    list-style:none;
+    float:left;
+}
+.card .box ul li a {
+    display:block;
+    margin:0 10px;
+    font-size:20px;
+    transition:0.5s;
+    text-align:center;
+}
+.card .box ul li:hover a {
+    color:#e91e63;
+    transform:rotateY(360deg);
+}
+.bg-color {
+    background-color: #bfbdbf42;
+}
+.card {
+    max-width: 324px;
+    margin: auto;
+    margin-bottom: 27px;
+}
+aside#secondary {
+    padding-top: 29px;
+}
+.btn-sm {
+    padding: 8px 21px !important;
+    margin: 13px 0px;
+}
+div#h100 {
+    height: 100px;
+}
+.wrapper.h200 {
+    height: 200px;
+    border-bottom: 1px solid #f1f1f1;
+}
+#blog ~ #contact {
+    background-color: #f1f1f1;
+    margin-top: 40px;
+}
+
+/* =WordPress Core
+-------------------------------------------------------------- */
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+	background-color: #eee;
+	clip: auto !important;
+	clip-path: none;
+	color: #444;
+	display: block;
+	font-size: 1em;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+	/* Above WP toolbar. */
 }
