@@ -65,16 +65,11 @@
     </section>
 
     <!-- footer -->
-
-</div><!-- #content -->
-
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">        
         <?php echo cs_get_option('copuright');?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
-</div><!-- #page -->
-
 <?php wp_footer(); ?>
 
 
@@ -85,8 +80,8 @@
     <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/owl.carousel.min.js"></script>
     <!--<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/custom.js"></script>-->
     <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/modernizr.custom.js"></script>
-    <script type="text/javascript" src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/simple-lightbox.js"></script>
-     <script type="text/javascript" src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/simple-lightbox.min.js"></script>
+    <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/simple-lightbox.js"></script>
+     <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/simple-lightbox.min.js"></script>
      <script>
 	$(function(){
 		var $gallery = $('.gallery a').simpleLightbox();
@@ -150,14 +145,5 @@ $(document).ready(function() {
 })
 
 </script>
-<?php echo '<style>.affix,.btn-default,input[type="submit"]{background:'.cs_get_option('main_picker');?>
-<?php echo '}body{color:'.cs_get_option('title_color_picker');?>
-<?php echo '}.grey_section{background:'.cs_get_option('text_color_picker');?>
-<?php echo '}.footer1{background-color:'.cs_get_option('baground_color_sectopm');?>
-<?php echo '}h2, h1 a,h1,.color_b{color:'.cs_get_option('text_head');?>
-<?php echo '}.site-info,.navbar-nav > li > a,.navbar-brand,.btn-default,input[type="submit"]{color:'.cs_get_option('brand_text_color');?>
-<?php echo '}section.toranto{background-color:'.cs_get_option('table_section');?>
-<?php echo '}section.toranto .txt-center, section.toranto .table{color:'.cs_get_option('table_section_text');?>
-<?php echo '}footer{background-color:'.cs_get_option('Other_color_picker').'}</style>';?>
 </body>
 </html>

@@ -37,15 +37,14 @@ get_header(); ?>
             </div>
         </div>
         <!-- header -->
-    </div>
         <!-- banner -->
         <div class="container">
             <div class="bannerOuter">
                 <div class="banner">
                     <div class="bannerContent">
                      <!--<h1><?php echo cs_get_option('heto_title');?></h1>-->
-                        <p class="site-info"><?php echo cs_get_option('heto_sub_title');?> <br><i class="fa fa fa-phone-square"></i>&nbsp;<?php echo cs_get_option('phone_number');?></p>
-                        <a href="<?php echo cs_get_option('heto_button_link');?>"><button class=" top-pdng btn btn-default hvr-bounce-to-right"><?php echo cs_get_option('heto_button_text');?></button></a>
+                        <p class="site-info"><?php echo cs_get_option('heto_sub_title');?> <br><i class="fa fa fa-phone-square"></i>&nbsp;<a href="tel:<?php echo cs_get_option('phone_number');?>"><?php echo cs_get_option('phone_number');?></a></p>
+                        <a href="<?php echo cs_get_option('heto_button_link');?>" class=" top-pdng btn btn-default hvr-bounce-to-right"><?php echo cs_get_option('heto_button_text');?></a>
                     </div>
                 </div>
             </div>
@@ -95,6 +94,7 @@ Tabe section
            <a href="tel:+4166608555" class="btn btn-default hvr-bounce-to-right">CALL - 416-660-8555</a>
           </div>
  </div>
+  </div>
  </section>
 <!--===========================
 Section bellow table
@@ -130,7 +130,6 @@ Section bellow table
                   </div>
             </div>
            </div>
-        </div>  
     </section>
 <?php  } ?>
 <!--===================
@@ -170,8 +169,7 @@ section C
                   </a>
                   </div>
             </div>
-           </div>
-        </div>  
+           </div> 
     </section>
 
 <?php  } ?>
@@ -217,8 +215,7 @@ section E
                   <!--<img src="<?php echo $meta_data['section_e_upload']; ?>" alt="">-->
                   </div>
             </div>
-           </div>
-        </div>  
+           </div> 
     </section>
 
 <?php  } ?>
@@ -254,7 +251,7 @@ section Video
         <h2><?php echo cs_get_option('video_title');?></h2>
         <p><?php echo cs_get_option('video_sub_title');?></p>
             <div class="video-wrapper">
-            <iframe width="1140" height="480" src="<?php echo cs_get_option('bideo_link');?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="1140" height="480" src="<?php echo cs_get_option('bideo_link');?>" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </section>
@@ -300,32 +297,18 @@ section Video
                 </div>
                 <div class="col-sm-4">
                 <p><?php echo cs_get_option('foorer_descriptio');?></p>
-                <!--
-                    <h4>STAY IN TOUCH</h4>
-                    <ul class="stayInTouch">
-                        <li>
-                            <a href="#"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/facebook.png" alt=""></a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/twitter.png" alt=""></a>
-                        </li>
-
-                    </ul>-->
+               
                 </div>
             </div>
         </div>
     </section>
 
     <!-- footer -->
-
-</div><!-- #content -->
-
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">        
         <?php echo cs_get_option('copuright');?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
-</div><!-- #page -->
 
 <?php wp_footer(); ?>
 
@@ -337,8 +320,8 @@ section Video
     <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/owl.carousel.min.js"></script>
     <!--<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/custom.js"></script>-->
     <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/modernizr.custom.js"></script>
-    <script type="text/javascript" src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/simple-lightbox.js"></script>
-     <script type="text/javascript" src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/simple-lightbox.min.js"></script>
+    <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/simple-lightbox.js"></script>
+     <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/simple-lightbox.min.js"></script>
      <script>
 	$(function(){
 		var $gallery = $('.gallery a').simpleLightbox();
@@ -384,14 +367,5 @@ section Video
 		});
 	});
 </script>
-<?php echo '<style>.affix,.btn-default,input[type="submit"]{background:'.cs_get_option('main_picker');?>
-<?php echo '}body{color:'.cs_get_option('title_color_picker');?>
-<?php echo '}.grey_section{background:'.cs_get_option('text_color_picker');?>
-<?php echo '}.footer1{background-color:'.cs_get_option('baground_color_sectopm');?>
-<?php echo '}h2, h1 a,h1,.color_b{color:'.cs_get_option('text_head');?>
-<?php echo '}.site-info,.navbar-nav > li > a,.navbar-brand,.btn-default,input[type="submit"]{color:'.cs_get_option('brand_text_color');?>
-<?php echo '}section.toranto{background-color:'.cs_get_option('table_section');?>
-<?php echo '}section.toranto .txt-center, section.toranto .table, .footer1, .footer1 a{color:'.cs_get_option('table_section_text');?>
-<?php echo '}footer{background-color:'.cs_get_option('Other_color_picker').'}</style>';?>
 </body>
 </html>

@@ -32,5 +32,14 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <?php wp_head(); ?>
-  	<link rel="icon" href="<?php echo cs_get_option('favicon');?>" sizes="16x16" type="image/png"> 
+  	<link rel="icon" href="<?php echo cs_get_option('favicon');?>" sizes="16x16" type="image/png">
+	<?php echo '<style>.affix,.btn-default,input[type="submit"]{background:'.cs_get_option('main_picker');?>
+<?php echo '}body{color:'.cs_get_option('title_color_picker');?>
+<?php echo '}.grey_section{background:'.cs_get_option('text_color_picker');?>
+<?php echo '}.footer1{background-color:'.cs_get_option('baground_color_sectopm');?>
+<?php echo '}h2, h1 a,h1,.color_b{color:'.cs_get_option('text_head');?>
+<?php echo '}.site-info,.navbar-nav > li > a,.navbar-brand,.btn-default,input[type="submit"]{color:'.cs_get_option('brand_text_color');?>
+<?php echo '}section.toranto{background-color:'.cs_get_option('table_section');?>
+<?php echo '}section.toranto .txt-center, section.toranto .table, .footer1, .footer1 a{color:'.cs_get_option('table_section_text');?>
+<?php echo '}footer{background-color:'.cs_get_option('Other_color_picker').'}</style>';?>
 </head>

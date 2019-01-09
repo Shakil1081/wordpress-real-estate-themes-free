@@ -191,7 +191,7 @@ body a:hover {
 
 ul.front-listing {color: #666666;margin-left: 3%;font-size: 14px;text-align:left;}
 ul.front-listing li a {color: #666666;}
-.site-info {
+.site-info ,.site-info a{
     color: #fff;
 }
 
