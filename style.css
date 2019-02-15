@@ -218,8 +218,6 @@ a.navbar-brand:hover {
     width: 100%;
     display: none !important;
 }
-/* card details start  */
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto+Condensed:400,400i,700,700i');
 section{
     padding: 100px 0;
 }
@@ -230,6 +228,9 @@ input[type=search] {
     border: 0px;
     padding: 2px;
     background-color: #bbbabb;
+}
+.btn-group.mr-2 a {
+    color: #ffff;
 }
 input[type="submit"] {
     border: 0;
