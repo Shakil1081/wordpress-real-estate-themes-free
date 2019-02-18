@@ -83,7 +83,6 @@ h1, h2, h3, h4, h5, h6 {
     background: none;
     z-index: 99;
     position: relative;
-    border-bottom: 1px solid #f9eeee7d;
 }
 
 .subheader p {
@@ -1370,6 +1369,10 @@ a[href^="tel"]{
 .top-pdng {
     margin-top: 150px !important;
 }
+span.fa-stack.fa-lg {
+    border: 1px solid;
+}
+
 
     }
 
