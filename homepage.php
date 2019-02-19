@@ -269,25 +269,26 @@ section Video
                         }?>
                         </a>  
                 
-                         <ul class="stayInTouch text-left">
+                        <ul class="stayInTouch text-left">
                           <?php if( ! empty( cs_get_option('facebook_link'))){?>
                         <li>
-                           <a href="<?php echo cs_get_option('facebook_link');?>"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/facebook.png" alt=""></a>
+                           <a href="<?php echo cs_get_option('facebook_link');?>"> <span class="fa-stack fa-lg"><i class="fa fa-facebook"></i></span></a>
+                          
                         </li>
                         <?php }?>
                         <?php if( ! empty( cs_get_option('twitter_link'))){?>
                         <li>
-                            <a href="<?php echo cs_get_option('twitter_link');?>"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/twitter.png" alt=""></a>
+                            <a href="<?php echo cs_get_option('twitter_link');?>"><span class="fa-stack fa-lg"><i class="fa fa-twitter"></i></span></a>
                         </li>
                         <?php }?>
                         <?php if( ! empty( cs_get_option('linkedin_link'))){?>
                          <li>
-                            <a href="<?php echo cs_get_option('linkedin_link');?>"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/linkedin.png" alt=""></a>
+                            <a href="<?php echo cs_get_option('linkedin_link');?>"><span class="fa-stack fa-lg"><i class="fa fa-linkedin"></i></span></a>
                         </li>
                         <?php }?>
                         <?php if( ! empty( cs_get_option('pinterest_link'))){?>
                          <li>
-                            <a href="<?php echo cs_get_option('pinterest_link');?>"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/pinterest.png" alt=""></a>
+                            <a href="<?php echo cs_get_option('pinterest_link');?>"><span class="fa-stack fa-lg"><i class="fa fa-pinterest"></i></span></a>
                         </li>
                         <?php }?>
                     </ul>
@@ -314,13 +315,8 @@ section Video
 
 
     <!-- script -->
-    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/bootstrap.min.js"></script>
-    <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/owl.carousel.min.js"></script>
-    <!--<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/custom.js"></script>-->
-    <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/modernizr.custom.js"></script>
-    <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/simple-lightbox.js"></script>
      <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/simple-lightbox.min.js"></script>
      <script>
 	$(function(){
@@ -337,34 +333,6 @@ section Video
 		.on('closed.simplelightbox', function(){
 			console.log('Closed');
 		})
-		.on('change.simplelightbox', function(){
-			console.log('Requested for change');
-		})
-		.on('next.simplelightbox', function(){
-			console.log('Requested for next');
-		})
-		.on('prev.simplelightbox', function(){
-			console.log('Requested for prev');
-		})
-		.on('nextImageLoaded.simplelightbox', function(){
-			console.log('Next image loaded');
-		})
-		.on('prevImageLoaded.simplelightbox', function(){
-			console.log('Prev image loaded');
-		})
-		.on('changed.simplelightbox', function(){
-			console.log('Image changed');
-		})
-		.on('nextDone.simplelightbox', function(){
-			console.log('Image changed to next');
-		})
-		.on('prevDone.simplelightbox', function(){
-			console.log('Image changed to prev');
-		})
-		.on('error.simplelightbox', function(e){
-			console.log('No image found, go to the next/prev');
-			console.log(e);
-		});
 	});
 </script>
 </body>
