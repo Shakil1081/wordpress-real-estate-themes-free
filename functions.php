@@ -686,6 +686,7 @@ add_action('after_switch_theme', 'bilder_create_db');
 /*=================================
  contact form 7 data
 ==============================*/
+
 add_action( 'wpcf7_mail_sent', 'your_wpcf7_mail_sent_function' ); 
 
 function your_wpcf7_mail_sent_function( $contact_form ) {
@@ -697,21 +698,21 @@ function your_wpcf7_mail_sent_function( $contact_form ) {
     }
        
    if ( 'Reagistation' == $title ) {
-        $data['name'] = $posted_data['name-full'];
-        $data['email'] = $posted_data['email'];
-        $data['phone'] = $posted_data['phone'];
-	  	 $data['url'] = site_url();
+        $name = strtolower($posted_data['text-name']);
+	    $name = strtolower(str_replace(' ', '_',  $name));
+        $email = strtolower($posted_data['email']);
+        $phone = strtolower($posted_data['phone']);
+	  	 $url = site_url();
         $Areyouarealtor = $posted_data['Areyouarealtor'];
-	    $data['Areyouarealtor'] = $Areyouarealtor['0'];
-    	/* Put your code here to manipulate the data - simples 😉 */
- 
+	    $ayor = strtolower($Areyouarealtor['0']);
+   
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-   CURLOPT_URL => "http://apiserver.yandscondo.ca/index.php/User_Authentication/emailstor/?name=".$data['name']."&email=".$data['email']."&phone=".$data['phone']."&Areyouarealtor=".$data['Areyouarealtor']."&url=".$data['url'],
+   CURLOPT_URL => 'http://apiserver.yandscondo.ca/index.php/User_Authentication/emailstor/?name='.$name.'&email='.$email.'&phone='.$phone.'&Areyouarealtor='.$ayor.'&url='.$url,
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
-  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_MAXREDIRS => 20,
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
@@ -722,9 +723,7 @@ curl_setopt_array($curl, array(
     "cache-control: no-cache"
   ),
 ));
- $curl = curl_init();
- print_r($curl);
- 
+
 $response = curl_exec($curl);
 $err = curl_error($curl);
 
