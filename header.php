@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -6,10 +5,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<script type='application/ld+json'>{"@context":"https://schema.org","@type":"WebSite","@id":"<?php echo get_site_url(); ?>/#website","url":"<?php echo get_site_url(); ?>/","name":"<?php wp_title(); ?>","potentialAction":{"@type":"SearchAction","target":"<?php echo get_site_url(); ?>?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+	
+	<span itemscope itemtype="http://schema.org/Organization"> 
+
+</span>
    <?php if ( ! function_exists( '_wp_render_title_tag' ) ) {
 	function theme_slug_render_title() {
 ?>
-<title><?php wp_title( '|', true, 'right' ); ?></title>
+<title  itemprop="name" ><?php wp_title( '|', true, 'right' ); ?></title>
 <?php
 	}
 	add_action( 'wp_head', 'theme_slug_render_title' );
@@ -19,7 +24,7 @@
     <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/font-awesome.css">
      <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/custom.css">
-    <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/style.css">
+    <!--<link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/style.css">-->
     <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/demo1.css">   
     <link rel='stylesheet' href='<?php echo esc_url( get_template_directory_uri() ); ?>/dist/simplelightbox.min.css'>
     <?php wp_head(); ?>

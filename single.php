@@ -53,19 +53,44 @@ get_header(); ?>
         <div id="blog" class="container">
             <div class="row">
                 <div class="col-sm-8 singalblogcont">
-             <?php
+								<div itemscope itemtype="http://schema.org/Article">
+				             <?php
         // Start the loop.
         while ( have_posts() ) : the_post(); ?>
 <?php if ( has_post_thumbnail()) : ?>
    <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-   <?php the_post_thumbnail('',array('class' => 'img-responsive')); ?>
+    <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+    <img itemprop="<?php the_post_thumbnail_url(); ?>" src="<?php the_post_thumbnail_url(); ?>" class="img-responsive"/>
+    <meta itemprop="width" content="710"/>
+    <meta itemprop="height" content="500"/>
+  </div>
    </a>
  <?php endif; ?>
- <div class="imageoverlap">
-		<h1><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+  <div class="imageoverlap">
+		<h1 itemprop="headline"><?php the_title(); ?></h1>
          <p class="mrtadata"><i class="fa fa-calendar-check-o" aria-hidden="true"></i>&nbsp;<small><?php the_time('F jS, Y'); ?> by&nbsp;&nbsp;<i class="fa fa-user-circle" aria-hidden="true"></i>  <?php the_author_posts_link(); ?></small></p>
 </div>
-<?php the_content(); ?>
+
+  <meta itemscope itemprop="mainEntityOfPage" itemType="https://schema.org/WebPage" itemid="https://technicalseo.com"/>
+  <span itemprop="description"><?php the_content(); ?></span>
+  <meta itemprop="datePublished" content="<?php the_date(); ?>"/>
+  <meta itemprop="dateModified" content="<?php the_date(); ?>"/>
+  <h3 itemprop="author" itemscope itemtype="https://schema.org/Organization">
+    By <span itemprop="name"><?php the_author(); ?></span>
+  </h3>
+  <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+    <meta itemprop="name" content="<?php the_author(); ?>"/>
+    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+      <img itemprop="url" src="https://technicalseo.com"/>
+      <meta itemprop="width" content="50"/>
+      <meta itemprop="height" content="60"/>
+    </div>
+  </div>
+</div>
+
+
+
+
 <?php
         endwhile;
         ?>

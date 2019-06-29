@@ -251,7 +251,7 @@ $options[]    = array(
 			'type'    => 'text',
 			'title'   => 'Video link',
 			'default' => 'https://www.youtube.com/embed/sbpq7RvWDM0',
-		  ),
+		  )
 	  
 	)
 	);
@@ -364,7 +364,106 @@ $options[]    = array(
 		  ),
 		)
 	  );
-
+/*--=========================================--*/	  
+// Local schema Setting
+/*--=========================================--*/
+$options[]    = array(
+	'name'      => 'localschemasetting',
+	'title'     => 'Local schema Setting',
+	'icon'      => 'fa fa-caret-right',
+	'fields'    => array(
+		array(
+			'id'      => 'lname',
+			'type'    => 'text',
+			'title'   => 'Name',
+			'default' => '',
+		  ),
+		  array(
+			'id'      => 'lImageURL',
+			'type'    => 'text',
+			'title'   => 'Image URL',
+			'default' => '',
+		  ),
+		   array(
+			'id'      => 'lidURL',
+			'type'    => 'text',
+			'title'   => '@id (URL)',
+			'default' => '',
+		  ),
+		  array(
+			'id'      => 'lURL',
+			'type'    => 'text',
+			'title'   => 'URL',
+			'default' => '',
+		  ),
+		  array(
+			'id'      => 'lPhone',
+			'type'    => 'text',
+			'title'   => 'Phone',
+			'default' => '',
+		  ),
+		 array(
+			'id'      => 'lPricerange',
+			'type'    => 'text',
+			'title'   => 'Price range',
+			'default' => '',
+		  ),
+		  array(
+			'id'      => 'lStreet',
+			'type'    => 'text',
+			'title'   => 'Street',
+			'default' => '',
+		  ),
+		   array(
+			'id'      => 'lCity',
+			'type'    => 'text',
+			'title'   => 'City',
+			'default' => '',
+		  ),
+		   array(
+			'id'      => 'lZipcode',
+			'type'    => 'text',
+			'title'   => 'Zip code',
+			'default' => '',
+		  ),
+		   array(
+			'id'      => 'lcountry',
+			'type'    => 'text',
+			'title'   => 'Country',
+			'default' => '',
+		  ),
+		   array(
+			'id'      => 'laddressRegion',
+			'type'    => 'text',
+			'title'   => 'Address Region',
+			'default' => '',
+		  ),
+		   array(
+			'id'      => 'lLatitude',
+			'type'    => 'text',
+			'title'   => 'Latitude',
+			'default' => '',
+		  ),
+		   array(
+			'id'      => 'lLongitude',
+			'type'    => 'text',
+			'title'   => 'Longitude',
+			'default' => '',
+		  ),
+		   array(
+			'id'      => 'lfacebookurl',
+			'type'    => 'text',
+			'title'   => 'Facebook Link',
+			'default' => '',
+		  ),
+		   array(
+			'id'      => 'ltwitterurl',
+			'type'    => 'text',
+			'title'   => 'twitter Link',
+			'default' => '',
+		  ),
+	)
+  );
 /*--=========================================--*/	  
 // Footer section 
 /*--=========================================--*/
@@ -561,3 +660,110 @@ function new_excerpt_more( $more ) {
     return '';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
+
+
+/*
+Creating custom table for user  
+*/
+function bilder_create_db() {
+	global $wpdb;
+	$charset_collate = $wpdb->get_charset_collate();
+	$table_name = $wpdb->prefix . 'Contactus';
+	$sql = "CREATE TABLE $table_name (
+	id mediumint(9) NOT NULL AUTO_INCREMENT,
+	`name` varchar(70) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `realtor` varchar(5) NOT NULL,
+	UNIQUE KEY id (id)
+	) $charset_collate;";
+	require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+	dbDelta( $sql );
+}
+
+add_action('after_switch_theme', 'bilder_create_db');
+
+/*=================================
+ contact form 7 data
+==============================*/
+add_action( 'wpcf7_mail_sent', 'your_wpcf7_mail_sent_function' ); 
+
+function your_wpcf7_mail_sent_function( $contact_form ) {
+    $title = $contact_form->title;
+    $submission = WPCF7_Submission::get_instance();
+  
+    if ( $submission ) {
+    	$posted_data = $submission->get_posted_data();
+    }
+       
+   if ( 'Reagistation' == $title ) {
+        $data['name'] = $posted_data['name-full'];
+        $data['email'] = $posted_data['email'];
+        $data['phone'] = $posted_data['phone'];
+	  	 $data['url'] = site_url();
+        $Areyouarealtor = $posted_data['Areyouarealtor'];
+	    $data['Areyouarealtor'] = $Areyouarealtor['0'];
+    	/* Put your code here to manipulate the data - simples 😉 */
+ 
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+   CURLOPT_URL => "http://apiserver.yandscondo.ca/index.php/User_Authentication/emailstor/?name=".$data['name']."&email=".$data['email']."&phone=".$data['phone']."&Areyouarealtor=".$data['Areyouarealtor']."&url=".$data['url'],
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "POST",
+  CURLOPT_POSTFIELDS => "undefined=",
+  CURLOPT_HTTPHEADER => array(
+    "Content-Type: application/x-www-form-urlencoded",
+    "Postman-Token: 0d1ceeb2-fcb9-4024-b642-7b9cfc9b5e1b",
+    "cache-control: no-cache"
+  ),
+));
+ $curl = curl_init();
+ print_r($curl);
+ 
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+// if ($err) {
+//   echo "cURL Error #:" . $err;
+// } else {
+//   echo "success".$response;
+// }
+	   
+// curl_setopt_array($curl, array(
+//   CURLOPT_URL => "http://apiserver.yandscondo.ca/?name=".$data['name']."&email=".$data['name']."&phone=".$data['phone']."&Areyouarealtor=".$data['Areyouarealtor']."&websiteurl=".$data['url'].'"',
+//   CURLOPT_RETURNTRANSFER => true,
+//   CURLOPT_ENCODING => "",
+//   CURLOPT_MAXREDIRS => 10,
+//   CURLOPT_TIMEOUT => 30,
+//   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+//   CURLOPT_CUSTOMREQUEST => "POST",
+//   CURLOPT_POSTFIELDS => "undefined=",
+//   CURLOPT_HTTPHEADER => array(
+//     "Content-Type: application/x-www-form-urlencoded",
+//     "Postman-Token: 589803bf-fa6e-4010-a620-3aef2aca0a6e",
+//     "cache-control: no-cache"
+//   ),
+// ));
+
+	   
+// $curl = curl_init();
+// print_r($curl);
+// $response = curl_exec($curl);
+// $err = curl_error($curl);
+
+// curl_close($curl);
+
+// if ($err) {
+//   echo "cURL Error #:" . $err;
+// } else {
+//   echo $response."afdsadf";
+//}
+ }
+}
