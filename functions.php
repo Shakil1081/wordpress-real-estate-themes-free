@@ -709,7 +709,11 @@ function your_wpcf7_mail_sent_function( $contact_form ) {
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
+<<<<<<< HEAD
    CURLOPT_URL => 'domianname'.$name.'&email='.$email.'&phone='.$phone.'&Areyouarealtor='.$ayor.'&url='.$url,
+=======
+   CURLOPT_URL => 'http://apiserver.yandscondo.ca/index.php/User_Authentication/emailstor/?name='.$name.'&email='.$email.'&phone='.$phone.'&Areyouarealtor='.$ayor.'&url='.$url,
+>>>>>>> cd224c0984694c5182802cdd7093319a71c4b563
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 20,
@@ -729,5 +733,43 @@ $err = curl_error($curl);
 
 curl_close($curl);
 
+<<<<<<< HEAD
+=======
+// if ($err) {
+//   echo "cURL Error #:" . $err;
+// } else {
+//   echo "success".$response;
+// }
+	   
+// curl_setopt_array($curl, array(
+//   CURLOPT_URL => "http://apiserver.yandscondo.ca/?name=".$data['name']."&email=".$data['name']."&phone=".$data['phone']."&Areyouarealtor=".$data['Areyouarealtor']."&websiteurl=".$data['url'].'"',
+//   CURLOPT_RETURNTRANSFER => true,
+//   CURLOPT_ENCODING => "",
+//   CURLOPT_MAXREDIRS => 10,
+//   CURLOPT_TIMEOUT => 30,
+//   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+//   CURLOPT_CUSTOMREQUEST => "POST",
+//   CURLOPT_POSTFIELDS => "undefined=",
+//   CURLOPT_HTTPHEADER => array(
+//     "Content-Type: application/x-www-form-urlencoded",
+//     "Postman-Token: 589803bf-fa6e-4010-a620-3aef2aca0a6e",
+//     "cache-control: no-cache"
+//   ),
+// ));
+
+	   
+// $curl = curl_init();
+// print_r($curl);
+// $response = curl_exec($curl);
+// $err = curl_error($curl);
+
+// curl_close($curl);
+
+// if ($err) {
+//   echo "cURL Error #:" . $err;
+// } else {
+//   echo $response."afdsadf";
+//}
+>>>>>>> cd224c0984694c5182802cdd7093319a71c4b563
  }
 }
