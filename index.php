@@ -27,7 +27,7 @@
  */
 get_header(); ?>
 <?php global $wd_wt; $meta_data = get_post_meta( get_the_ID(), '_custom_page_options', true );?>
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?>  itemscope itemtype="http://schema.org/WebPage">
     <div class="wrapper h200">
        <div class="header"  data-spy="affix" data-offset-top="197">
             <div class="container-fluid">
@@ -39,7 +39,7 @@ get_header(); ?>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                         <a class="navbar-brand" href="<?php echo site_url(); ?>">
+                         <a itemprop="url" class="navbar-brand" href="<?php echo site_url(); ?>">
                             <?php if(cs_get_option('log_c')){?>
                         <img src="<?php echo cs_get_option('log_c');?>" alt="logo"> 
                         <?php }else{ echo cs_get_option('logo_text_c'); }?>
@@ -82,7 +82,7 @@ get_header(); ?>
 <div class="box">
 <div class="img">
 <?php if ( has_post_thumbnail() ) : ?>
-<img src="<?php the_post_thumbnail_url(); ?>"/>
+<img  itemprop="image" src="<?php the_post_thumbnail_url(); ?>"/>
 <?php endif; ?>
 </div>
 <h2><?php the_title(); ?></h2>

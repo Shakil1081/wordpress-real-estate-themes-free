@@ -121,13 +121,15 @@ Section bellow table
                    <h2><?php echo $meta_data['section_a_text'];?></h2>
                 <p><?php echo $meta_data['section_a_textarea']; ?></p>                  
             </div>
-            <div class="<?php if($meta_data['section_a_upload']){ echo "col-sm-3";}else{ echo "displaynone";}; ?>">
+            <?php if($meta_data['section_a_upload']){ ?>
+            <div class=col-sm-3">
               	<div class="build_image gallery">
                   <a href="<?php echo $meta_data['section_a_upload']; ?>">
                   <img src="<?php echo $meta_data['section_a_upload']; ?>" alt="">
                   </a>
                   </div>
             </div>
+            <?php } ?>
            </div>
     </section>
 <?php  } ?>
@@ -137,13 +139,15 @@ section B
 <?php  if($meta_data['section_b_text']){?>
     <section class="builderPage">
         <div class="container aminitie-area">
-           <div class="<?php if($meta_data['section_b_upload']){ echo "col-sm-3";}else{ echo "displaynone";}; ?>">
+            <?php if($meta_data['section_b_upload']){ ?>
+           <div class="col-sm-3">
               	<div class="build_image gallery">
                   <a href="<?php echo $meta_data['section_b_upload']; ?>">
                   <img src="<?php echo $meta_data['section_b_upload']; ?>" alt="">
                   </a>
                  </div>
                     </div>
+            <?php } ?>
             <div class="<?php if($meta_data['section_b_upload']){ echo "col-sm-9";}else{ echo "col-sm-12";}; ?>">
             <h2 class="text-right"><?php echo $meta_data['section_b_text'];?></h2>
                 <p><?php echo $meta_data['section_b_textarea']; ?></p> 
@@ -161,13 +165,15 @@ section C
                    <h2><?php echo $meta_data['section_c_text'];?></h2>
                 <p><?php echo $meta_data['section_c_textarea']; ?></p>                  
             </div>
-            <div class="<?php if($meta_data['section_c_upload']){ echo "col-sm-3";}else{ echo "displaynone";}; ?>">
+            <?php if($meta_data['section_c_upload']){?>
+            <div class=" col-sm-3">
               	<div class="build_image gallery ">
                   <a href="<?php echo $meta_data['section_c_upload']; ?>">
                   <img src="<?php echo $meta_data['section_c_upload']; ?>" alt="">
                   </a>
                   </div>
             </div>
+            <?php }?>
            </div> 
     </section>
 
@@ -179,13 +185,15 @@ section D
 <?php  if($meta_data['section_d_text']){?>
     <section class="builderPage">
         <div class="container aminitie-area">
-           <div class="<?php if($meta_data['section_d_upload']){ echo "col-sm-3";}else{ echo "displaynone";}; ?>">
-              	<div class="build_image gallery">
-                  <a href="<?php echo $meta_data['section_d_upload']; ?>">
-                  <img src="<?php echo $meta_data['section_d_upload']; ?>" alt="">
-                  </a>
-                 </div>
-                    </div>
+            <?php if($meta_data['section_d_upload']){?>
+                        <div class="col-sm-3">
+                             <div class="build_image gallery">
+                               <a href="<?php echo $meta_data['section_d_upload']; ?>">
+                               <img src="<?php echo $meta_data['section_d_upload']; ?>" alt="">
+                               </a>
+                              </div>
+                                 </div>
+            <?php  } ?>
             <div class="<?php if($meta_data['section_d_upload']){ echo "col-sm-9";}else{ echo "col-sm-12";}; ?>">
             <h2 class="text-right"><?php echo $meta_data['section_d_text'];?></h2>
                 <p><?php echo $meta_data['section_d_textarea']; ?></p> 
@@ -205,13 +213,15 @@ section e
                    <h2><?php echo $meta_data['section_e_text'];?></h2>
                 <p><?php echo $meta_data['section_e_textarea']; ?></p>                  
             </div>
-            <div class="<?php if($meta_data['section_e_upload']){ echo "col-sm-3";}else{ echo "displaynone";}; ?>">
+            <?php if($meta_data['section_e_upload']){?>
+            <div class="ol-sm-3">
               	<div class="build_image gallery">
                   <a href="<?php echo $meta_data['section_e_upload']; ?>">
                   <img src="<?php echo $meta_data['section_e_upload']; ?>" alt="">
                   </a>
                   </div>
             </div>
+            <?php }?>
            </div> 
     </section>
 
